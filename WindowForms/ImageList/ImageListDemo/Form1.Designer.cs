@@ -40,13 +40,13 @@
             this.saveAsBtn = new System.Windows.Forms.Button();
             this.selectDirectoryBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtVendor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.dtmDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.selectedImage)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -55,10 +55,10 @@
             // 
             this.imageList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.imageList.HideSelection = false;
-            this.imageList.Location = new System.Drawing.Point(10, 34);
+            this.imageList.Location = new System.Drawing.Point(12, 39);
+            this.imageList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.imageList.Name = "imageList";
-            this.imageList.Size = new System.Drawing.Size(170, 690);
+            this.imageList.Size = new System.Drawing.Size(198, 796);
             this.imageList.TabIndex = 0;
             this.imageList.UseCompatibleStateImageBehavior = false;
             this.imageList.Visible = false;
@@ -69,9 +69,10 @@
             this.selectedImage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.selectedImage.Location = new System.Drawing.Point(198, 34);
+            this.selectedImage.Location = new System.Drawing.Point(231, 39);
+            this.selectedImage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.selectedImage.Name = "selectedImage";
-            this.selectedImage.Size = new System.Drawing.Size(527, 622);
+            this.selectedImage.Size = new System.Drawing.Size(615, 718);
             this.selectedImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.selectedImage.TabIndex = 1;
             this.selectedImage.TabStop = false;
@@ -91,8 +92,8 @@
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(973, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1135, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -114,9 +115,10 @@
             // previousBtn
             // 
             this.previousBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.previousBtn.Location = new System.Drawing.Point(198, 675);
+            this.previousBtn.Location = new System.Drawing.Point(231, 779);
+            this.previousBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.previousBtn.Name = "previousBtn";
-            this.previousBtn.Size = new System.Drawing.Size(62, 41);
+            this.previousBtn.Size = new System.Drawing.Size(72, 47);
             this.previousBtn.TabIndex = 6;
             this.previousBtn.Text = "Previous";
             this.previousBtn.UseVisualStyleBackColor = true;
@@ -126,9 +128,10 @@
             // nextBtn
             // 
             this.nextBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.nextBtn.Location = new System.Drawing.Point(284, 675);
+            this.nextBtn.Location = new System.Drawing.Point(331, 779);
+            this.nextBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.nextBtn.Name = "nextBtn";
-            this.nextBtn.Size = new System.Drawing.Size(62, 41);
+            this.nextBtn.Size = new System.Drawing.Size(72, 47);
             this.nextBtn.TabIndex = 7;
             this.nextBtn.Text = "Next";
             this.nextBtn.UseVisualStyleBackColor = true;
@@ -139,12 +142,12 @@
             // 
             this.saveAsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.saveAsBtn.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.saveAsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveAsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.saveAsBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.saveAsBtn.Location = new System.Drawing.Point(843, 676);
+            this.saveAsBtn.Location = new System.Drawing.Point(983, 780);
             this.saveAsBtn.Margin = new System.Windows.Forms.Padding(2);
             this.saveAsBtn.Name = "saveAsBtn";
-            this.saveAsBtn.Size = new System.Drawing.Size(121, 40);
+            this.saveAsBtn.Size = new System.Drawing.Size(141, 46);
             this.saveAsBtn.TabIndex = 8;
             this.saveAsBtn.Text = "Save and Next";
             this.saveAsBtn.UseVisualStyleBackColor = false;
@@ -155,12 +158,12 @@
             // 
             this.selectDirectoryBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.selectDirectoryBtn.BackColor = System.Drawing.SystemColors.Highlight;
-            this.selectDirectoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectDirectoryBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.selectDirectoryBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.selectDirectoryBtn.Location = new System.Drawing.Point(464, 575);
+            this.selectDirectoryBtn.Location = new System.Drawing.Point(541, 663);
             this.selectDirectoryBtn.Margin = new System.Windows.Forms.Padding(2);
             this.selectDirectoryBtn.Name = "selectDirectoryBtn";
-            this.selectDirectoryBtn.Size = new System.Drawing.Size(148, 39);
+            this.selectDirectoryBtn.Size = new System.Drawing.Size(173, 45);
             this.selectDirectoryBtn.TabIndex = 6;
             this.selectDirectoryBtn.Text = "Select A Directory";
             this.selectDirectoryBtn.UseVisualStyleBackColor = false;
@@ -170,27 +173,30 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(731, 83);
+            this.label1.Location = new System.Drawing.Point(853, 96);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(44, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "Vendor";
             // 
-            // textBox1
+            // txtVendor
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(734, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(134, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtVendor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtVendor.Location = new System.Drawing.Point(856, 125);
+            this.txtVendor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtVendor.Name = "txtVendor";
+            this.txtVendor.Size = new System.Drawing.Size(156, 23);
+            this.txtVendor.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(731, 142);
+            this.label2.Location = new System.Drawing.Point(853, 164);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 9;
             this.label2.Text = "Description";
             // 
@@ -198,9 +204,10 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(731, 203);
+            this.label3.Location = new System.Drawing.Point(853, 234);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 10;
             this.label3.Text = "Date";
             // 
@@ -208,50 +215,54 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(731, 268);
+            this.label4.Location = new System.Drawing.Point(853, 309);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 13);
+            this.label4.Size = new System.Drawing.Size(51, 15);
             this.label4.TabIndex = 11;
             this.label4.Text = "Amount";
             // 
-            // textBox2
+            // txtDescription
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(734, 167);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDescription.Location = new System.Drawing.Point(856, 193);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(116, 23);
+            this.txtDescription.TabIndex = 3;
             // 
-            // textBox4
+            // txtAmount
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(734, 295);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(103, 20);
-            this.textBox4.TabIndex = 5;
+            this.txtAmount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtAmount.Location = new System.Drawing.Point(856, 340);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(119, 23);
+            this.txtAmount.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dtmDate
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(734, 228);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(195, 20);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 6, 8, 13, 49, 40, 0);
+            this.dtmDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtmDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtmDate.Location = new System.Drawing.Point(856, 263);
+            this.dtmDate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtmDate.Name = "dtmDate";
+            this.dtmDate.Size = new System.Drawing.Size(227, 23);
+            this.dtmDate.TabIndex = 4;
+            this.dtmDate.Value = new System.DateTime(2022, 6, 8, 13, 49, 40, 0);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 729);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(1135, 841);
+            this.Controls.Add(this.dtmDate);
+            this.Controls.Add(this.txtAmount);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtVendor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.selectDirectoryBtn);
             this.Controls.Add(this.saveAsBtn);
@@ -261,6 +272,7 @@
             this.Controls.Add(this.imageList);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Form1";
             this.Text = "Dave\'s wonderful expense importer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -285,13 +297,13 @@
         private System.Windows.Forms.Button saveAsBtn;
         private System.Windows.Forms.Button selectDirectoryBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtVendor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtAmount;
+        private System.Windows.Forms.DateTimePicker dtmDate;
     }
 }
 

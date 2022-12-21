@@ -97,6 +97,9 @@ namespace ImageListDemo
 
             selectedImage?.Image?.Save($@"c:/downloads/{directoryName}/{imageName}.png", ImageFormat.Png);
 
+            WriteToCsvFile(txtVendor.Text, txtDescription.Text, txtAmount.Text, dtmDate.Value);
+
+
             var clickedButton = sender as Button;
             if (clickedButton.Text.Equals("Previous"))
             {
@@ -120,10 +123,10 @@ namespace ImageListDemo
                 }
             }
 
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox4.Text = "";
-            dateTimePicker1.Text = "";
+            txtVendor.Text = "";
+            txtDescription.Text = "";
+            txtAmount.Text = "";
+            dtmDate.Text = "";
 
         }
 
@@ -176,6 +179,16 @@ namespace ImageListDemo
                 }
             }
         }
+
+        private void WriteToCsvFile(string vendor, string description, string amount, DateTime date)
+        {
+            // Format the data as a CSV row
+            string csvRow = string.Join(",", vendor, description, amount, date.ToString("yyyy-MM-dd"));
+
+            // Append the data to the end of the file
+            File.AppendAllText(@"c:/downloads/Imagedata.csv", csvRow + Environment.NewLine);
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
