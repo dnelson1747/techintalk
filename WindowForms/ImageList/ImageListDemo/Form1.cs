@@ -13,9 +13,13 @@ namespace ImageListDemo
         private int SelectedImageIndex = 0;
         private List<Image> LoadedImages { get; set; }
 
+        private string defaultDirectory = @"C:/Users/djn/OneDrive - Default Directory/Desktop/Receipts/";
+
+
         public Form1()
         {
             InitializeComponent();
+            this.LoadDirectory();
         }
 
         private void LoadImagesFromFolder(string[] paths)
@@ -80,10 +84,7 @@ namespace ImageListDemo
             
         }
 
-        private void selectDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.LoadDirectory();
-        }
+
 
         private void btnSaveNext_Click(object sender, EventArgs e)
         {
@@ -118,9 +119,45 @@ namespace ImageListDemo
 
   
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void SelectDirectorybtn_Click_1(object sender, EventArgs e)
         {
-            this.LoadDirectory();
+            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+            
+            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            {
+                string[] paths = Directory.GetFiles(folderBrowser.SelectedPath);
+                LoadImagesFromFolder(paths);
+
+                // initializing images list
+                ImageList images = new ImageList();
+                images.ImageSize = new Size(130, 40);
+
+
+                foreach (var image in LoadedImages)
+                {
+                    images.Images.Add(image);
+                }
+
+                // double check we have some images selected
+                if (images.Images.Count > 0)
+                {
+                    imageList.Visible = true;
+                    selectedImage.Visible = true;
+                    nextBtn.Visible = true;
+                    previousBtn.Visible = true;
+                    btnSaveNext.Visible = true;
+                    menuStrip1.Visible = true;
+                    selectDirectoryBtn.Visible = true;
+
+                }
+                // setting our listview with the imagelist
+                imageList.LargeImageList = images;
+
+                for (int itemIndex = 1; itemIndex <= LoadedImages.Count; itemIndex++)
+                {
+                    imageList.Items.Add(new ListViewItem($"Image {itemIndex}", itemIndex - 1));
+                }
+            }
         }
 
         private void WriteToCsvFile(string vendor, string description, string amount, DateTime date, string imageName)
@@ -137,46 +174,50 @@ namespace ImageListDemo
 
         private void LoadDirectory()
         {
-            FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
-            if (folderBrowser.ShowDialog() == DialogResult.OK)
+            string[] paths = Directory.GetFiles(defaultDirectory);
+            LoadImagesFromFolder(paths);
+
+            //FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+
+            //if (folderBrowser.ShowDialog() == DialogResult.OK)
+            //{
+            //    // selected directory
+            //    var selectedDirectory = folderBrowser.SelectedPath;
+            //    // images paths from selected directory
+            //    var imagePaths = Directory.GetFiles(selectedDirectory);
+            //    // loading images from images paths
+            //    LoadImagesFromFolder(imagePaths);
+
+            // initializing images list
+            ImageList images = new ImageList();
+            images.ImageSize = new Size(130, 40);
+
+
+            foreach (var image in LoadedImages)
             {
-                // selected directory
-                var selectedDirectory = folderBrowser.SelectedPath;
-                // images paths from selected directory
-                var imagePaths = Directory.GetFiles(selectedDirectory);
-                // loading images from images paths
-                LoadImagesFromFolder(imagePaths);
-
-                // initializing images list
-                ImageList images = new ImageList();
-                images.ImageSize = new Size(130, 40);
-
-
-                foreach (var image in LoadedImages)
-                {
-                    images.Images.Add(image);
-                }
-
-                // double check we have some images selected
-                if(images.Images.Count > 0)
-                {
-                    imageList.Visible = true;
-                    selectedImage.Visible = true;
-                    nextBtn.Visible = true;
-                    previousBtn.Visible = true;
-                    btnSaveNext.Visible = true;
-                    menuStrip1.Visible = true;
-                    selectDirectoryBtn.Visible = false;
-
-                }
-                // setting our listview with the imagelist
-                imageList.LargeImageList = images;
-
-                for (int itemIndex = 1; itemIndex <= LoadedImages.Count; itemIndex++)
-                {
-                    imageList.Items.Add(new ListViewItem($"Image {itemIndex}", itemIndex - 1));
-                }
+                images.Images.Add(image);
             }
+
+            // double check we have some images selected
+            if (images.Images.Count > 0)
+            {
+                imageList.Visible = true;
+                selectedImage.Visible = true;
+                nextBtn.Visible = true;
+                previousBtn.Visible = true;
+                btnSaveNext.Visible = true;
+                menuStrip1.Visible = true;
+                selectDirectoryBtn.Visible = true;
+
+            }
+            // setting our listview with the imagelist
+            imageList.LargeImageList = images;
+
+            for (int itemIndex = 1; itemIndex <= LoadedImages.Count; itemIndex++)
+            {
+                imageList.Items.Add(new ListViewItem($"Image {itemIndex}", itemIndex - 1));
+            }
+
         }
 
 
