@@ -87,7 +87,7 @@ namespace ImageListDemo
         private void button3_Click(object sender, EventArgs e)
         {
             // downloads directy name
-            const string directoryName = "DownloadsConverted";
+            const string directoryName = "Downloads";
 
             // downloads directy exists
             Directory.CreateDirectory(directoryName);
@@ -95,38 +95,13 @@ namespace ImageListDemo
             // creating dynamic image name
             var imageName = Guid.NewGuid().ToString();
 
-            selectedImage?.Image?.Save($@"c:/downloads/{directoryName}/{imageName}.png", ImageFormat.Png);
-
-            var clickedButton = sender as Button;
-            if (clickedButton.Text.Equals("Previous"))
-            {
-                if (SelectedImageIndex > 0)
-                {
-                    SelectedImageIndex -= 1;
-                    Image selectedImg = LoadedImages[SelectedImageIndex];
-                    selectedImage.Image = selectedImg;
-                    SelectTheClickedItem(imageList, SelectedImageIndex);
-                }
-
-            }
-            else
-            {
-                if (SelectedImageIndex < (LoadedImages.Count - 1))
-                {
-                    SelectedImageIndex += 1;
-                    Image selectedImg = LoadedImages[SelectedImageIndex];
-                    selectedImage.Image = selectedImg;
-                    SelectTheClickedItem(imageList, SelectedImageIndex);
-                }
-            }
-
-            textBox1.Text = "";
-            textBox2.Text = "";
-            textBox4.Text = "";
-            dateTimePicker1.Text = "";
-
+            selectedImage?.Image?.Save($@"{directoryName}/{imageName}.png", ImageFormat.Png);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -147,7 +122,7 @@ namespace ImageListDemo
 
                 // initializing images list
                 ImageList images = new ImageList();
-                images.ImageSize = new Size(130, 80);
+                images.ImageSize = new Size(130, 40);
 
 
                 foreach (var image in LoadedImages)
@@ -175,11 +150,6 @@ namespace ImageListDemo
                     imageList.Items.Add(new ListViewItem($"Image {itemIndex}", itemIndex - 1));
                 }
             }
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

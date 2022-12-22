@@ -24,7 +24,7 @@
         {
           "ruleId": "UA106",
           "message": {
-            "text": "Package Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.346202 needs to be added."
+            "text": "Package Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.355802 needs to be added."
           },
           "locations": [
             {
@@ -40,7 +40,7 @@
         {
           "ruleId": "UA106",
           "message": {
-            "text": "Package Microsoft.Windows.Compatibility, Version=6.0.0 needs to be added."
+            "text": "Package Microsoft.Windows.Compatibility, Version=7.0.0 needs to be added."
           },
           "locations": [
             {

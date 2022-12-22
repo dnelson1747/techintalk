@@ -52,9 +52,10 @@ namespace ImageListDemo
                     SelectTheClickedItem(imageList, SelectedImageIndex);
                 }
 
-            } else
+            }
+            else
             {
-                if (SelectedImageIndex < (LoadedImages.Count - 1 ))
+                if (SelectedImageIndex < (LoadedImages.Count - 1) && LoadedImages.Count > 0)
                 {
                     SelectedImageIndex += 1;
                     Image selectedImg = LoadedImages[SelectedImageIndex];
@@ -84,10 +85,10 @@ namespace ImageListDemo
             this.LoadDirectory();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSaveNext_Click(object sender, EventArgs e)
         {
             // downloads directy name
-            const string directoryName = "DownloadsConverted";
+            const string directoryName = "Downloads";
 
             // downloads directy exists
             Directory.CreateDirectory(directoryName);
@@ -95,45 +96,43 @@ namespace ImageListDemo
             // creating dynamic image name
             var imageName = Guid.NewGuid().ToString();
 
-            selectedImage?.Image?.Save($@"c:/downloads/{directoryName}/{imageName}.png", ImageFormat.Png);
+            selectedImage?.Image?.Save($@"c:/downloads/downloadsconverted/{imageName}.png", ImageFormat.Png);
 
-            WriteToCsvFile(txtVendor.Text, txtDescription.Text, txtAmount.Text, dtmDate.Value);
+            WriteToCsvFile(txtVendor.Text, txtDescription.Text, txtAmount.Text, dtmDate.Value, imageName);
 
+            //Reset the text value fields, pick next image in list
 
-            var clickedButton = sender as Button;
-            if (clickedButton.Text.Equals("Previous"))
+            if (SelectedImageIndex < (LoadedImages.Count - 1) && LoadedImages.Count > 0)
             {
-                if (SelectedImageIndex > 0)
-                {
-                    SelectedImageIndex -= 1;
-                    Image selectedImg = LoadedImages[SelectedImageIndex];
-                    selectedImage.Image = selectedImg;
-                    SelectTheClickedItem(imageList, SelectedImageIndex);
-                }
-
-            }
-            else
-            {
-                if (SelectedImageIndex < (LoadedImages.Count - 1))
-                {
-                    SelectedImageIndex += 1;
-                    Image selectedImg = LoadedImages[SelectedImageIndex];
-                    selectedImage.Image = selectedImg;
-                    SelectTheClickedItem(imageList, SelectedImageIndex);
-                }
+                SelectedImageIndex += 1;
+                Image selectedImg = LoadedImages[SelectedImageIndex];
+                selectedImage.Image = selectedImg;
+                SelectTheClickedItem(imageList, SelectedImageIndex);
             }
 
-            txtVendor.Text = "";
-            txtDescription.Text = "";
             txtAmount.Text = "";
-            dtmDate.Text = "";
+            txtDescription.Text = "";
+            txtVendor.Text = "";
 
         }
 
+  
 
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.LoadDirectory();
+        }
+
+        private void WriteToCsvFile(string vendor, string description, string amount, DateTime date, string imageName)
+        {
+            // Get the file location
+            var fileLocation = $@"c:/downloads/downloadsconverted/{imageName}.png";
+
+            // Format the data as a CSV row
+            string csvRow = string.Join(",", vendor, description, amount, date.ToString("yyyy-MM-dd"), fileLocation);
+
+            // Append the data to the end of the file
+            File.AppendAllText(@"c:/downloads/Imagedata.csv", csvRow + Environment.NewLine);
         }
 
         private void LoadDirectory()
@@ -150,7 +149,7 @@ namespace ImageListDemo
 
                 // initializing images list
                 ImageList images = new ImageList();
-                images.ImageSize = new Size(130, 80);
+                images.ImageSize = new Size(130, 40);
 
 
                 foreach (var image in LoadedImages)
@@ -165,7 +164,7 @@ namespace ImageListDemo
                     selectedImage.Visible = true;
                     nextBtn.Visible = true;
                     previousBtn.Visible = true;
-                    saveAsBtn.Visible = true;
+                    btnSaveNext.Visible = true;
                     menuStrip1.Visible = true;
                     selectDirectoryBtn.Visible = false;
 
@@ -180,19 +179,6 @@ namespace ImageListDemo
             }
         }
 
-        private void WriteToCsvFile(string vendor, string description, string amount, DateTime date)
-        {
-            // Format the data as a CSV row
-            string csvRow = string.Join(",", vendor, description, amount, date.ToString("yyyy-MM-dd"));
 
-            // Append the data to the end of the file
-            File.AppendAllText(@"c:/downloads/Imagedata.csv", csvRow + Environment.NewLine);
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32519.111
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageListDemo", "ImageListDemo.csproj", "{C24DDA88-0C3A-4C79-BC29-53D53BA90E89}"
 EndProject
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E480F873-4D9C-4EF2-9FD3-C697A902541A}
+		SolutionGuid = {98A14CD2-F583-4419-B8A6-E5531E8207DC}
 	EndGlobalSection
 EndGlobal
