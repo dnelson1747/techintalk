@@ -166,7 +166,7 @@ namespace ImageListDemo
                     previousBtn.Visible = true;
                     btnSaveNext.Visible = true;
                     menuStrip1.Visible = true;
-                    selectDirectoryBtn.Visible = false;
+                    selectDirectoryBtn.Visible = true;
 
                 }
                 // setting our listview with the imagelist

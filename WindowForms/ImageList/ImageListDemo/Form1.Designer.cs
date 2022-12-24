@@ -154,7 +154,7 @@
             // selectDirectoryBtn
             // 
             this.selectDirectoryBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.selectDirectoryBtn.Location = new System.Drawing.Point(483, 302);
+            this.selectDirectoryBtn.Location = new System.Drawing.Point(601, 647);
             this.selectDirectoryBtn.Name = "selectDirectoryBtn";
             this.selectDirectoryBtn.Size = new System.Drawing.Size(143, 45);
             this.selectDirectoryBtn.TabIndex = 6;
@@ -165,7 +165,7 @@
             // lblVendor
             // 
             this.lblVendor.AutoSize = true;
-            this.lblVendor.Location = new System.Drawing.Point(886, 69);
+            this.lblVendor.Location = new System.Drawing.Point(907, 122);
             this.lblVendor.Name = "lblVendor";
             this.lblVendor.Size = new System.Drawing.Size(44, 15);
             this.lblVendor.TabIndex = 7;
@@ -174,7 +174,7 @@
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(887, 142);
+            this.lblDescription.Location = new System.Drawing.Point(907, 180);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(67, 15);
             this.lblDescription.TabIndex = 8;
@@ -183,7 +183,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(892, 201);
+            this.lblDate.Location = new System.Drawing.Point(907, 233);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(31, 15);
             this.lblDate.TabIndex = 9;
@@ -192,7 +192,7 @@
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
-            this.lblAmount.Location = new System.Drawing.Point(891, 265);
+            this.lblAmount.Location = new System.Drawing.Point(907, 287);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(51, 15);
             this.lblAmount.TabIndex = 10;
@@ -200,28 +200,28 @@
             // 
             // txtVendor
             // 
-            this.txtVendor.Location = new System.Drawing.Point(879, 91);
+            this.txtVendor.Location = new System.Drawing.Point(907, 140);
             this.txtVendor.Name = "txtVendor";
             this.txtVendor.Size = new System.Drawing.Size(98, 23);
             this.txtVendor.TabIndex = 11;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(880, 172);
+            this.txtDescription.Location = new System.Drawing.Point(907, 207);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(103, 23);
             this.txtDescription.TabIndex = 12;
             // 
             // dtmDate
             // 
-            this.dtmDate.Location = new System.Drawing.Point(879, 226);
+            this.dtmDate.Location = new System.Drawing.Point(907, 251);
             this.dtmDate.Name = "dtmDate";
             this.dtmDate.Size = new System.Drawing.Size(100, 23);
             this.dtmDate.TabIndex = 13;
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(892, 297);
+            this.txtAmount.Location = new System.Drawing.Point(907, 305);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(98, 23);
             this.txtAmount.TabIndex = 14;
