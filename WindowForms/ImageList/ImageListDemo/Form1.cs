@@ -116,7 +116,7 @@ namespace ImageListDemo
             txtVendor.Text = "";
 
         }
-        //making a comment
+      
   
 
         private void SelectDirectorybtn_Click_1(object sender, EventArgs e)
